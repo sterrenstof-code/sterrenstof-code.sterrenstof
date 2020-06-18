@@ -7,8 +7,6 @@
   font-family: 'Roboto', sans-serif;
 }
 
-
-
 .wrap {
   display: flex;
   flex-direction: row;
@@ -26,7 +24,6 @@
   font-family: 'Roboto', sans-serif;
   pointer-events: none;  
 }
-
 
 
 /* everything left */
@@ -127,13 +124,10 @@ ul {
 a {
   text-decoration: none;
   color: black;
-  
 }
 
 
 .uitlegTime {
-  
-
   position: fixed;
   font-size: 13px;
   left: 47.4%;
@@ -160,7 +154,7 @@ a {
 /* everything right */
 
 .right {
-  background: url(Horsehead-Hubble.jpg);
+  background: url(five.jpg);
   background-size: cover; 
   background-position: top 10% left 10%;
   width: 50%; 
@@ -251,24 +245,84 @@ a {
   top: 34.8%;
 }
 
+/* hoover uitleg */
+
+.knoppenProject a {
+  display: absolute;
+}
+
+.hTest {
+  background: url(five.jpg);
+  filter: contrast(130%) brightness(130%) invert(150%); 
+  display: none;
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  background-size: cover;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-color: rgba(255,255,255,0.8);
+  transition:all .5s ease;
+-webkit-transition-delay: 5s;
+    -moz-transition-delay: 5s;
+    -ms-transition-delay: 5s;
+    -o-transition-delay: 5s;
+    transition-delay: 5s;
+}
+
+.project:hover .knoppenProject h1 {
+  display: inline-block;
+-webkit-transition-delay: 5s;
+    -moz-transition-delay: 5s;
+    -ms-transition-delay: 5s;
+    -o-transition-delay: 5s;
+    transition-delay: 5s;
+}
+
+
+.project:hover a img {
+  filter: contrast(0%) brightness(0%); 
+-webkit-transition-delay: 5s;
+    -moz-transition-delay: 5s;
+    -ms-transition-delay: 5s;
+    -o-transition-delay: 5s;
+    transition-delay: 5s;
+}
+
+
+/* projects */
+
 .first {
   text-align: center;
-  margin-top: 450px;
+  margin-top: 500px;
   font-size: 100%;
 }
 
+.
 
 .first img {
   width: 90%;
   height: 90%;
+  position: relative;
   object-fit: scale-down;
   image-rendering: pixelated;
-  vertical-align:text-top;
+  vertical-align: text-top;
   filter: drop-shadow(0 0 3px white);
   padding: 20px;
   height: 300px;
   image-rendering: auto;
   image-rendering: crisp-edges;
+}
+
+.project {
+  position: relative;
+
 }
 
 
@@ -281,10 +335,11 @@ a {
 .second img {
   width: 90%;
   height: 90%;
+  position: relative;
   object-fit: scale-down;
   image-rendering: pixelated;
-  vertical-align:text-top;
-  filter: drop-shadow(0 0 4px white);
+  vertical-align: text-top;
+  filter: drop-shadow(0 0 3px white);
   padding: 20px;
   height: 300px;
   image-rendering: auto;
@@ -300,12 +355,13 @@ a {
 }
 
 .third img {
-  width: 90%;
+ width: 90%;
   height: 90%;
+  position: relative;
   object-fit: scale-down;
   image-rendering: pixelated;
-  vertical-align:text-top;
-  filter: drop-shadow(0 0 4px white);
+  vertical-align: text-top;
+  filter: drop-shadow(0 0 3px white);
   padding: 20px;
   height: 300px;
   image-rendering: auto;
@@ -324,10 +380,11 @@ a {
 .fourth img {
   width: 90%;
   height: 90%;
+  position: relative;
   object-fit: scale-down;
   image-rendering: pixelated;
-  vertical-align:text-top;
-  filter: drop-shadow(0 0 4px white);
+  vertical-align: text-top;
+  filter: drop-shadow(0 0 3px white);
   padding: 20px;
   height: 300px;
   image-rendering: auto;
@@ -360,7 +417,6 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-backface-visibility:hidden;
-    filter: drop-shadow(1px 1px 50px rgb(127, 142, 141));
     display:block;
     font-size: 7rem;
     z-index:1;
@@ -386,6 +442,7 @@ a {
     top:0;
     left:50%;
     width: 50%;
+    text-shadow: 1px 1px 2px white;
     content: attr(data-content); /* dynamic content for the pseudo element */
     overflow:hidden;
     pointer-events: none; /* so the base char is selectable by mouse */
@@ -398,9 +455,14 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-backface-visibility:hidden;
-  filter:  drop-shadow(3px 3px 80px white);
+  filter: drop-shadow(1px 1px 1px black);
+  text-shadow: 2px 2px 15px white;
   padding-right: 5px;
 }
+
+
+
+
 
 .hidden{
   display: none;
@@ -655,6 +717,7 @@ a {
 
 .nstof {
   font-size: 5rem;
+  
   }
 
 .first {

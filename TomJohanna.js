@@ -67,6 +67,7 @@ rndimg = new Array('one.jpg',
 x=(Math.floor(Math.random()*numimages));
 randomimage=(rndimg[x]);
 document.querySelector(".right").style.backgroundImage = "url("+ randomimage +")"; 
+document.querySelector(".hTest").style.backgroundImage = "url("+ randomimage +")"; 
 }
 
 
