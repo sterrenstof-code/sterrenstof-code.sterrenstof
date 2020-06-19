@@ -18,7 +18,7 @@
   flex-direction: row;
   top: 50%;
   left: 50%;
-  transform: translate(-55.5%, -50%);
+  transform: translate(-55%, -50%);
   font-size: 8rem;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
@@ -269,14 +269,14 @@ a {
   -webkit-background-clip: text;
   background-color: rgba(255,255,255,0.8);
   transition:all .5s ease;
--webkit-transition-delay: 5s;
-    -moz-transition-delay: 5s;
-    -ms-transition-delay: 5s;
-    -o-transition-delay: 5s;
-    transition-delay: 5s;
+  -webkit-transition-delay: 5s;
+  -moz-transition-delay: 5s;
+  -ms-transition-delay: 5s;
+  -o-transition-delay: 5s;
+  transition-delay: 5s;
 }
 
-.project:hover .knoppenProject h1 {
+/* .project:hover .knoppenProject h1 {
   display: inline-block;
 -webkit-transition-delay: 5s;
     -moz-transition-delay: 5s;
@@ -294,6 +294,7 @@ a {
     -o-transition-delay: 5s;
     transition-delay: 5s;
 }
+*/
 
 
 /* projects */
@@ -304,9 +305,7 @@ a {
   font-size: 100%;
 }
 
-.
-
-.first img {
+.first a img {
   width: 90%;
   height: 90%;
   position: relative;
@@ -318,6 +317,15 @@ a {
   height: 300px;
   image-rendering: auto;
   image-rendering: crisp-edges;
+}
+
+.first a {
+  padding: 20px;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .project {
