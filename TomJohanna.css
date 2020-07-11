@@ -325,6 +325,10 @@ a {
   and (-webkit-min-device-pixel-ratio: 2)
    { 
 
+    .left, .right {
+      height: 100vh;
+      width: 50vw;
+    }
     .intro {
       padding: 0 5rem;
     }
