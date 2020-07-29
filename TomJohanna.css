@@ -321,6 +321,7 @@ section {
   background-position: center;
   background-size: cover;
   align-self: center;
+  z-index: 100000;
 }
 
 .uitlegCardsOne  {
