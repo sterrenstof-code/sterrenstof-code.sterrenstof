@@ -7,12 +7,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.wrap {
-  display: flex;
-  flex-direction: row;
-}
+
 
 .logo {
+  z-index: 1;
   position: fixed;
   display: flex;
   flex-direction: row;
@@ -22,14 +20,25 @@
   font-size: 8rem;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
-  pointer-events: none;  
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+}
+
+.fade {
+  opacity: 0;
 }
 
 
 /* everything left */
 
 .left {
-  background: rgb(246, 242, 230);
+  background-color: rgb(246, 242, 230);
+  position: fixed;
   width: 50%;
   height: 100vh;
   display: grid;
@@ -37,8 +46,44 @@
   grid-template-rows: 1.3fr 0.2fr 1fr;
   grid-template-areas: "intro intro intro"
                         ". . ."
-                        "info info info";
+                        "info info info";   
+                        transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;                    
 }
+
+.slideOut {
+  position: absolute;
+  transform: matrix(1, 0, 0, 1, -640, 0);
+  -webkit-transform:;
+  -moz-transform:;
+  -ms-transform:;
+  -o-transform:;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+.slideIn {
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+  -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+  -ms-transform: matrix(1, 0, 0, 1, 0, 0);
+  -o-transform: matrix(1, 0, 0, 1, 0, 0);
+  transition: all 1.5s ease-in;
+  -webkit-transition: all 1.5s ease-in;
+  -moz-transition: all 1.5s ease-in;
+  -ms-transition: all 1.5s ease-in;
+  -o-transition: all 1.5s ease-in;
+}
+
+
+
+
 
 .intro {
   grid-column-start: 1 ;
@@ -62,54 +107,33 @@
   grid-row-start: 3;
   grid-row-end: 4;
   padding-bottom: 0;
-  padding: 2rem 3rem;
-  border: 0;
-  font-size: 2vh;
+  padding: 2rem 0.5rem;
+  font-size: 1.8vh;
+  letter-spacing: 1.5px;
   line-height: normal;
   display: flex;
   flex-flow: row;
   justify-content: left;
   align-content: top;
   flex-wrap: wrap;
-}
-
-.columnOne {
-  flex-grow: 1;
-  padding: 0.4rem;
-}
-
-.columnTwo {
-   flex-grow: 1;
-   padding: 0.4rem;
-  
-}
-
-.columnThree {
-   flex-grow: 1;
-   padding: 0.4rem;
- 
-}
-
-.columnFour {
-   flex-grow: 1;
-   padding: 0.4rem;
- 
-}
-
-ul {
+  font-family: "Roboto",sans-serif;
   list-style: none;
-  display: inline-block;
-  padding: 0px;
+  text-decoration: none;
 }
 
-.skills {
-  padding: 0;
-
+.skills, .about, .contact, .contactMe {
+  list-style: none;
+  text-decoration: none;
+  padding-right: 1rem;
 }
 
 .head {
-  padding-bottom: 15px;
+  padding: 1rem 0px;
   font-weight: bold;
+}
+
+li {
+  padding: 0.2rem 0rem;
 }
 
 a {
@@ -132,6 +156,11 @@ a {
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
 }
 
 #verticalLine {
@@ -145,19 +174,31 @@ a {
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
 }
-
 
 
 /* everything right */
 
 .right {
-  background: url(five.jpg);
+ /* background: url(five.jpg);
   background-size: cover; 
-  background-position: top 10% left 10%;
+  background-position: top 10% left 10%; */
+  background-color: rgb(246, 242, 230);
   width: 50%; 
-  height: 100vh; 
-  overflow: auto;
+  position: absolute;
+  right: 0;
+  z-index: 0;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+
 }
 
 .logo img
@@ -183,6 +224,7 @@ a {
 
 .uitlegProjects {
   position: fixed;
+  z-index: 10;
   font-size: 10px;
   left: 97.4%;
   top: 18%;
@@ -192,6 +234,11 @@ a {
   width: 150px;
   font-family: "Roboto", sans-serif;
   color: white;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
 }
 
 .vlOne {
@@ -201,64 +248,327 @@ a {
   border-left: 1px solid white;
   height: 200px;
   position: relative;
+  z-index: 10;
   border-color: rgb(215, 221, 252);
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
 }
 
-.vlOne:hover {
-  border: solid red;
-  border-width: 0 2px 2px 0;
-}
+/* projects background */
 
-
-
-/* center div upon click */
-
-.centered {
-  text-align: center;
-  font-size: 100%;
-  margin: 0 auto;
-  top: 50%;
-  vertical-align:middle;
+section {
   position: relative;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  color: white;
+  width: 100%;
+  height: 150vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50vw;
+  z-index: 0;
+  font-size: 12px;
 }
+
+.one-bg {
+  background-image: url(parfum.jpg);
+  background-position: center;
+  
+}
+
+.two-bg {
+  background-image: url(IMG_6013kopie.JPG);
+  background-position: left 50% top 20%;
+ 
+}
+
+.three-bg {
+  background-image: url(seven.jpg);
+  background-position: 20%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+
+.card {
+  border: 1px solid rgba(246, 242, 230, 0.671);
+  box-shadow: 0px 0px 30px rgb(246, 242, 230);
+  /*border: 10px solid blueviolet;
+  */position: absolute;
+  right: 15%;
+  width: 70%;
+  left: 15%;
+  height: 25%;
+  z-index: 10;
+  bottom: 20%;
+  z-index: 500;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+}
+
+.one {
+  background-image: url(parfumsection.jpg);
+  background-position: center;
+  background-size: cover;
+  align-self: center;
+}
+
+.uitlegCardsOne  {
+  text-align: right;
+  position: absolute;
+  right: 15%;
+  width: 70%;
+  left: 15%;
+  z-index: 100;
+  bottom: 10%;
+  z-index: 10;
+  color: white;
+  cursor: pointer !important;
+}
+
+.uitlegCardsTwo  {
+  text-align: right;
+  position: absolute;
+  right: 15%;
+  width: 70%;
+  left: 15%;
+  z-index: 10;
+  bottom: 10%;
+  z-index: 10;
+  color: white;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.uitlegCardsTwo h1, .uitlegCardsTwo p, .uitlegCardsTwo a {
+  color: black !important;
+}
+
+.uitlegCardsTwo h1, .uitlegCardsOne h1, .uitlegCardsThree h1  {
+  text-align: right;
+  font-size: 12px;
+  padding: 0.2rem 0;
+}
+.uitlegCardsTwo p, .uitlegCardsOne p, .uitlegCardsThree p  {
+  text-align: right;
+  padding: 0.2rem 0;
+} 
+
+.uitlegCardsTwo a, .uitlegCardsOne a, .uitlegCardsThree a  {
+  text-align: right;
+  padding: 0.2rem 0;
+  color: white;
+  
+} 
+
+.uitlegCardsThree  {
+  text-align: right;
+  position: absolute;
+  right: 15%;
+  width: 70%;
+  left: 15%;
+  z-index: 10;
+  bottom: 10%;
+  z-index: 10;
+  color: white;
+  cursor: pointer;
+}
+
+.two {
+  background-image: url(yanji.jpg);
+  background-position: center;
+  background-size: cover;
+  align-self: center;
+  z-index: 300;
+}
+.three {
+  background-image: url(sterrenstof.jpg);
+  background-position: center;
+  background-size: cover;
+  z-index: 3;
+  
+}
+
+/* info about the projects */
+
+.extreemRechts {
+  background-color: rgb(246, 242, 230);
+  position: fixed;
+}
+
+.extreemRechts p {
+  padding: 0.5rem 0;
+}
+
+
+
+#infoOne, #infoTwo, #infoThree  {
+  font-family: 'Open-Sans', sans-serif;
+  letter-spacing: 0.03rem;
+  position: fixed;
+  font-size: 16px;
+  left: 50%;
+  width: 50vw;
+  height: 100vh;
+  display: none;
+  color: black;
+  padding: 15% 12%;
+  text-align: left;
+  transition: all 1.5s;
+  -webkit-transition: all 1.5s;
+  -moz-transition: all 1.5s;
+  -ms-transition: all 1.5s;
+  -o-transition: all 1.5s;
+  transform: translateX(0%);
+  -webkit-animation: anim 3.5s ;
+  animation: anim 3.5s 1;
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  -o-transform: translateX(0%);
+}
+
+@-webkit-keyframes anim {
+  0% {
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+}
+  14.28% {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+}
+}
+@keyframes anim {
+  0% {
+    transform: translateX(100%);
+  }
+  14.28% {
+    transform: translateX(0);
+  }
+  
+}
+
+.extreemRechts a {
+  font-size: 14px;
+}
+
+.close {
+  z-index: 1000;
+  position: fixed;
+  display: none;
+  right: 5%;
+  top: 5%;
+  width: 32px;
+  height: 32px;
+  opacity: 0.5;
+  color: black;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: rgb(27, 26, 26);
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+
+.blockquote {
+  padding: 5vh;
+  position: relative;
+}
+.blockquote p {
+  font-family: "Utopia-italic";
+  font-size: 14px;
+  font-weight: 700px;
+  text-align: left;
+}
+
+.blockquote:before {
+position: absolute;
+font-family: 'FontAwesome';
+top: 3vh;
+left: 15vh;
+content:"\f10d";
+font-size: 50px;
+color: rgba(0,0,0,0.1);
+ 
+}
+
+.blockquote::after {
+  content: "";
+  top: 20px;
+  left: 50%;
+  margin-left: -100px;
+  position: absolute;
+  border-bottom: 3px solid #bf0024;
+  height: 3px;
+  width: 200px;
+}
+
 
 
 /* stars in logo */
 
 .spanStof {
+  z-index: 1;
   font-size: 7rem;
   background-image: url(NGC_3114.png);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
   -webkit-backface-visibility:hidden;
   
 }
 
 .halfStyle {
     position:relative;
+    z-index: 10;
     font-size: 7rem;
     display:inline-block;
     color: transparent; /* hide the base character */
     overflow:hidden;
-    white-space: pre; /* to preserve the spaces from collapsing */
+    white-space: pre;
+    background-image: url(NGC_3114.png);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-backface-visibility:hidden; /* to preserve the spaces from collapsing */
 }
 .halfStyle:before { /* creates the left part */
     background-image: url(NGC_3114.png);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-backface-visibility:hidden;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-backface-visibility:hidden;
     display:block;
     font-size: 7rem;
-    z-index:1;
+    z-index:20;
     position:absolute;
     top:0;
     width: 50%;
@@ -269,7 +579,8 @@ a {
     
 }
 .halfStyle:after { /* creates the right part */
-     background: white;
+
+     background-image: url(NGC_3114.png);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-backface-visibility:hidden;
@@ -277,11 +588,10 @@ a {
     display:block;
     direction: rtl; /* very important, will make the width to start from right */
     position:absolute;
-    z-index:2;
+    z-index:20;
     top:0;
     left:50%;
     width: 50%;
-    text-shadow: 1px 1px 2px white;
     content: attr(data-content); /* dynamic content for the pseudo element */
     overflow:hidden;
     pointer-events: none; /* so the base char is selectable by mouse */
@@ -289,14 +599,14 @@ a {
 }
 
 .nstof {
-  background: white;
-  font-size: 7rem;
+  position: relative;
+  background-image: url(NGC_3114.png);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-backface-visibility:hidden;
-  filter: drop-shadow(1px 1px 1px black);
-  text-shadow: 2px 2px 15px white;
+  font-size: 7rem;
   padding-right: 5px;
+  z-index: 20;
 }
 
 
@@ -314,7 +624,6 @@ a {
     background-color: green;
   }
 
- 
   }
 
 /* Ipad */
@@ -337,7 +646,7 @@ a {
       max-height: 60vh;
       min-height: 55vh;
       flex-direction: column;
-      font-size: 1.2em;
+      font-size: 1em;
       justify-content: center;
       align-content: center;
       text-align: center;
@@ -358,6 +667,7 @@ a {
     }
 
     .logo {
+      z-index: 100;
       top: 37%;
       left: 50%;
       transform: translate(-55%, -50%);
@@ -370,6 +680,5 @@ a {
       -ms-transform: translate(-55%, -50%);
       -o-transform: translate(-55%, -50%);
 }
-
 
   }

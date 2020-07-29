@@ -1,5 +1,4 @@
 
-
 //halfletter
 
 jQuery(function($) {
@@ -41,8 +40,179 @@ jQuery(function($) {
     });
 });
 
-//background image
+// projects scrolldisplay
 
+
+const one = document.querySelector('.one');
+const uitlegCardsOne = document.querySelector('.uitlegCardsOne');
+
+let scrollAmountOne = 0;
+let oldscrollAmountOne = 0;
+window.addEventListener('scroll', function() {
+  const scrollTopOne = window.scrollY;
+    if (scrollTopOne + window.innerHeight > one.offsetTop) {
+      if (scrollTopOne > oldscrollAmountOne) {
+        scrollAmountOne--;  
+      } else if (scrollTopOne < oldscrollAmountOne) {
+        scrollAmountOne++;
+      }
+      one.style.transform = `translateY(${scrollAmountOne * 1}px)`;
+      uitlegCardsOne.style.transform = `translateY(${scrollAmountOne * 1}px)`;
+    };  
+  oldscrollAmountOne = scrollTopOne;
+});
+
+const two = document.querySelector('.two');
+const uitlegCardsTwo = document.querySelector('.uitlegCardsTwo');
+
+let scrollAmountTwo = 0;
+let oldscrollAmountTwo = 0;
+window.addEventListener('scroll', function() {
+  const scrollTop = window.scrollY;
+    if (scrollTop + window.innerHeight > two.offsetTop) {
+      if (scrollTop > oldscrollAmountTwo) {
+        scrollAmountTwo--;  
+      } else if (scrollTop < oldscrollAmountTwo) {
+        scrollAmountTwo++;
+      }
+      two.style.transform = `translateY(${scrollAmountTwo * 1}px)`;
+      uitlegCardsTwo.style.transform = `translateY(${scrollAmountOne * 1}px)`;
+    };  
+  oldscrollAmountTwo = scrollTop;
+});
+
+
+const three = document.querySelector('.three');
+const uitlegCardsThree = document.querySelector('.uitlegCardsThree');
+
+let scrollAmountThree = 0;
+let oldscrollAmountThree = 0;
+window.addEventListener('scroll', function() {
+  const scrollTop = window.scrollY;
+    if (scrollTop + window.innerHeight > three.offsetTop) {
+      if (scrollTop > oldscrollAmountThree) {
+        scrollAmountThree--;  
+      } else if (scrollTop < oldscrollAmountThree) {
+        scrollAmountThree++;
+      }
+      three.style.transform = `translateY(${scrollAmountThree * 1}px)`;
+      uitlegCardsThree.style.transform = `translateY(${scrollAmountOne * 1}px)`;
+    };  
+  oldscrollAmountThree = scrollTop;
+});
+
+    //top background 
+
+
+window.smoothScroll = function(target) {
+  var scrollContainer = target;
+  do { //find scroll container
+      scrollContainer = scrollContainer.parentNode;
+      if (!scrollContainer) return;
+      scrollContainer.scrollTop += 1;
+  } while (scrollContainer.scrollTop == 0);
+  
+  var targetY = 0;
+  do { //find the top of target relatively to the container
+      if (target == scrollContainer) break;
+      targetY += target.offsetTop;
+  } while (target = target.offsetParent);
+  
+  scroll = function(c, a, b, i) {
+      i++; if (i > 30) return;
+      c.scrollTop = a + (b - a) / 30 * i;
+      setTimeout(function(){ scroll(c, a, b, i); }, 20);
+  }
+  // start scrolling
+  scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+}
+
+    // center project and fade sterrenstof/ 
+
+const logo = document.querySelector(".logo");
+const right = document.querySelector(".right");
+const ster = document.querySelector(".logo a");
+const left = document.querySelector(".left")
+const infoOne = document.querySelector("#infoOne");
+const infoTwo = document.querySelector("#infoTwo");
+const infoThree = document.querySelector("#infoThree");
+const kruis = document.querySelector(".close");
+
+function fadingLogo() {
+  logo.classList.add('fade');
+}
+
+function slidingLeft() {
+  left.classList.add('slideOut');
+  right.classList.add('slideOut');
+  left.style.transform = "matrix(1, 0, 0, 1, -640, 0);"
+}
+
+function slidingRight() {
+  infoOne.classList.toggle('slideIn');
+  infoOne.style.display = "block";
+}
+
+one.addEventListener("click", function(){
+  one.style.position = "absolute",
+  one.style.bottom = "55%",
+  uitlegCardsOne.style.position = "absolute",
+  uitlegCardsOne.style.bottom = "45%",
+  fadingLogo(),
+  slidingLeft(),
+  infoOne.style.display = "block",
+  infoTwo.style.display = "none",
+  infoThree.style.display = "none",
+  kruis.style.display = "block"
+});
+
+two.addEventListener("click", function(){
+  two.style.position = "absolute",
+  two.style.bottom = "55%",
+  uitlegCardsTwo.style.position = "absolute",
+  uitlegCardsTwo.style.bottom = "45%",
+  fadingLogo(),
+  slidingLeft(),
+  infoOne.style.display = "none",
+  infoTwo.style.display = "block",
+  infoThree.style.display = "none",
+  kruis.style.display = "block"
+});
+
+three.addEventListener("click", function(){
+  three.style.position = "absolute",
+  three.style.bottom = "55%",
+  uitlegCardsThree.style.position = "absolute",
+  uitlegCardsThree.style.bottom = "45%",
+  fadingLogo(),
+  slidingLeft(),
+  infoOne.style.display = "none",
+  infoTwo.style.display = "none",
+  infoThree.style.display = "block",
+  kruis.style.display = "block"
+});
+
+// transform .left out of screen 
+
+// exit
+
+  kruis.addEventListener("click", function(){
+    left.classList.remove('slideOut');
+    right.classList.remove('slideOut');
+    infoOne.classList.remove('slideIn');
+    infoOne.style.display = "none";
+    infoTwo.style.display = "none";
+    infoThree.style.display = "none";
+    logo.classList.remove('fade');
+    kruis.style.display ="none";
+    //location = location
+});
+
+
+
+
+//background image
+/*
 var images = [
   'nasa--hI5dX2ObAs-unsplash-2.jpg',
   'aldebaran-s-g-Gc-k-NPkA-unsplash.jpg',
@@ -69,5 +239,6 @@ randomimage=(rndimg[x]);
 document.querySelector(".right").style.backgroundImage = "url("+ randomimage +")"; 
 document.querySelector(".hTest").style.backgroundImage = "url("+ randomimage +")"; 
 }
-
+*/
+//centering elements that are clicked upon
 
