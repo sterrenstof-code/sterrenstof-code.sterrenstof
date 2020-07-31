@@ -45,6 +45,7 @@ jQuery(function($) {
 
 const one = document.querySelector('.one');
 const uitlegCardsOne = document.querySelector('.uitlegCardsOne');
+const uitlegBgOne = document.querySelector('.uitleg-bg-one');
 
 let scrollAmountOne = 0;
 let oldscrollAmountOne = 0;
@@ -58,12 +59,14 @@ window.addEventListener('scroll', function() {
       }
       one.style.transform = `translateY(${scrollAmountOne * 1}px)`;
       uitlegCardsOne.style.transform = `translateY(${scrollAmountOne * 1}px)`;
+      uitlegBgOne.style.transform = `translateY(${scrollAmountOne * 1}px)`;
     };  
   oldscrollAmountOne = scrollTopOne;
 });
 
 const two = document.querySelector('.two');
 const uitlegCardsTwo = document.querySelector('.uitlegCardsTwo');
+const uitlegBgTwo = document.querySelector('.uitleg-bg-two');
 
 let scrollAmountTwo = 0;
 let oldscrollAmountTwo = 0;
@@ -77,6 +80,7 @@ window.addEventListener('scroll', function() {
       }
       two.style.transform = `translateY(${scrollAmountTwo * 1}px)`;
       uitlegCardsTwo.style.transform = `translateY(${scrollAmountOne * 1}px)`;
+      uitlegBgTwo.style.transform = `translateY(${scrollAmountOne * 1}px)`;
     };  
   oldscrollAmountTwo = scrollTop;
 });
@@ -84,6 +88,7 @@ window.addEventListener('scroll', function() {
 
 const three = document.querySelector('.three');
 const uitlegCardsThree = document.querySelector('.uitlegCardsThree');
+const uitlegBgThree = document.querySelector('.uitleg-bg-three');
 
 let scrollAmountThree = 0;
 let oldscrollAmountThree = 0;
@@ -97,6 +102,7 @@ window.addEventListener('scroll', function() {
       }
       three.style.transform = `translateY(${scrollAmountThree * 1}px)`;
       uitlegCardsThree.style.transform = `translateY(${scrollAmountOne * 1}px)`;
+      uitlegBgThree.style.transform = `translateY(${scrollAmountOne * 1}px)`;
     };  
   oldscrollAmountThree = scrollTop;
 });
@@ -137,6 +143,8 @@ const infoOne = document.querySelector("#infoOne");
 const infoTwo = document.querySelector("#infoTwo");
 const infoThree = document.querySelector("#infoThree");
 const kruis = document.querySelector(".close");
+const since = document.querySelector(".uitlegTime");
+
 
 function fadingLogo() {
   logo.classList.add('fade');
@@ -163,8 +171,11 @@ one.addEventListener("click", function(){
   infoOne.style.display = "block",
   infoTwo.style.display = "none",
   infoThree.style.display = "none",
+  since.style.display = "none",
   kruis.style.display = "block"
 });
+
+
 
 two.addEventListener("click", function(){
   two.style.position = "absolute",
@@ -175,6 +186,7 @@ two.addEventListener("click", function(){
   slidingLeft(),
   infoOne.style.display = "none",
   infoTwo.style.display = "block",
+  since.style.display = "none",
   infoThree.style.display = "none",
   kruis.style.display = "block"
 });
@@ -188,6 +200,7 @@ three.addEventListener("click", function(){
   slidingLeft(),
   infoOne.style.display = "none",
   infoTwo.style.display = "none",
+  since.style.display = "none",
   infoThree.style.display = "block",
   kruis.style.display = "block"
 });
